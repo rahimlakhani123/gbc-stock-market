@@ -30,8 +30,8 @@ public class StockMetricsCalculatorTest {
 
     private static Stream<Arguments> produceStockDataPriceAndYield() {
         var stocks = List.of("TEA", "POP", "ALE", "GIN", "JOE");
-        var prices = List.of(10012, 10032, 10043, 2345, 6789);
-        var yields = List.of(0, 0.0008, 0.0023, 0.0853, 0.002);
+        var prices = List.of(112, 132, 143, 2345, 6789);
+        var yields = List.of(0, 0.06, 0.16, 0.09, 0.00);
 
         return IntStream.range(0, stocks.size())
                 .mapToObj(i -> Arguments.of(stocks.get(i), prices.get(i), yields.get(i)));
@@ -40,7 +40,7 @@ public class StockMetricsCalculatorTest {
     private static Stream<Arguments> produceStockDataPriceAndPERatio() {
         var stocks = List.of("TEA", "POP", "ALE", "GIN", "JOE");
         var prices = List.of(10012, 10032, 10043, 2345, 6789);
-        var peRatio = List.of(0, 1254.0, 436.652, 293.125, 522.23);
+        var peRatio = List.of(0, 1254.0, 436.65, 293.13, 522.23);
 
         return IntStream.range(0, stocks.size())
                 .mapToObj(i -> Arguments.of(stocks.get(i), prices.get(i), peRatio.get(i)));

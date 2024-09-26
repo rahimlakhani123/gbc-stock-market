@@ -33,7 +33,7 @@ public class StockMetricsCalculatorImpl implements StockMetricsCalculator {
                 return (double) stock.getLastDividend() / price;
             else
                 return (double) (stock.getFixedDividend() * stock.getParValue()) / price;
-        }).orElseThrow(()-> new StockNotFound(stockSymbol));
+        }).map(DoubleUtils::convertToTwoDps).orElseThrow(() -> new StockNotFound(stockSymbol));
     }
 
     /**
@@ -52,7 +52,7 @@ public class StockMetricsCalculatorImpl implements StockMetricsCalculator {
             if (stock.getLastDividend() == 0)
                 return 0.0;
             return (double) price / stock.getLastDividend();
-        }).orElseThrow(()-> new StockNotFound(stockSymbol));
+        }).map(DoubleUtils::convertToTwoDps).orElseThrow(() -> new StockNotFound(stockSymbol));
     }
 
     private void priceCheck(long price) {

@@ -1,6 +1,6 @@
 package com.GBCE.calculator;
 
-import com.GBCE.domain.fixture.InstrumentServiceFixture;
+import com.GBCE.domain.Stock;
 import com.GBCE.domain.fixture.TradeServiceFixture;
 import com.GBCE.service.InstrumentService;
 import com.GBCE.service.StockService;
@@ -8,7 +8,6 @@ import com.GBCE.service.TradeService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import com.GBCE.domain.Stock;
 
 class GBCEAllShareIndexTest {
 
@@ -25,7 +24,7 @@ class GBCEAllShareIndexTest {
     @Test
     void calculateIndex() {
         var indexVal = index.calculateIndex();
-        double expectedVal = 4204.256;
+        double expectedVal = 4204.26;
         Assertions.assertEquals(indexVal, expectedVal, 0.001);
     }
 }

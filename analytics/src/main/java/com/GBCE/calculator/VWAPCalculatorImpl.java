@@ -39,12 +39,13 @@ public class VWAPCalculatorImpl implements VWAPCalculator {
         var windowsInMillis = duration.toMillis();
 
         var inscopeTrade = trades.stream()
-                .filter(trade -> (nowInEpoch - trade.timestamp()) < windowsInMillis)
-                .toList();
+                .filter(trade -> (nowInEpoch - trade.timestamp()) < windowsInMillis).toList();
 
         if(inscopeTrade.isEmpty()) {
             return 0.0;
         }
+
+        log.info("Number of inscope trades{}", inscopeTrade.size());
 
         // this will create objects  - GC consideration,
         // for low memory utilization we could work with primitives
@@ -54,6 +55,6 @@ public class VWAPCalculatorImpl implements VWAPCalculator {
 
         var summationOfVolumes = inscopeTrade.stream().mapToLong(Trade::quantity).sum();
 
-        return (double) volumeAndPrice / summationOfVolumes;
+        return DoubleUtils.convertToTwoDps((double) volumeAndPrice / summationOfVolumes);
     }
 }

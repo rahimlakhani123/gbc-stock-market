@@ -27,6 +27,6 @@ public class GBCEAllShareIndex {
                 count++;
             }
         }
-        return Math.pow(product, 1.0 / count);
+        return DoubleUtils.convertToTwoDps(Math.pow(product, 1.0 / count));
     }
 }
