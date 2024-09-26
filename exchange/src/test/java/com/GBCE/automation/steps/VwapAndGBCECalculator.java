@@ -1,7 +1,7 @@
 package com.GBCE.automation.steps;
 
-import com.GBCE.domain.Trade;
 import com.GBCE.automation.hooks.GlobalHooks;
+import com.GBCE.domain.Trade;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -31,7 +31,7 @@ public class VwapAndGBCECalculator {
             long email = Long.parseLong(row.get("QUANTITY"));
             Trade.BuySell buySell = Trade.BuySell.valueOf(row.get("BuySell"));
             long price = Long.parseLong(row.get("PRICE"));
-            GlobalHooks.exchange.registerTrade(symbol, new Trade(timestamp, email, buySell, price));
+            GlobalHooks.exchange.registerTrade(symbol, Trade.onlyForTestingTradeFactory(timestamp, email, buySell, price));
         }
     }
 

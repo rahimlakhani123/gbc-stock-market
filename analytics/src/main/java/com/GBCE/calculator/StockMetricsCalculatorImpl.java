@@ -4,6 +4,9 @@ import com.GBCE.domain.Stock;
 import com.GBCE.service.InstrumentService;
 import com.GBCE.service.StockNotFound;
 
+/**
+ * Implementation for Financial Ratios of a Stock.
+ */
 public class StockMetricsCalculatorImpl implements StockMetricsCalculator {
 
     InstrumentService<Stock> instrumentService;

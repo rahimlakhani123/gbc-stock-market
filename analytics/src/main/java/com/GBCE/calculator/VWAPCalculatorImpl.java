@@ -9,7 +9,7 @@ import java.time.Duration;
 import java.time.Instant;
 
 /**
- * VWAPCalculator
+ * VWAPCalculator - Volume Weighted Average Price
  */
 public class VWAPCalculatorImpl implements VWAPCalculator {
 
@@ -27,6 +27,7 @@ public class VWAPCalculatorImpl implements VWAPCalculator {
 
     /**
      * Calculated using  (Cumulative (Price * Volume) / (Cumulative Volume))
+     * Computes to two Decimal places.
      * @param symbol
      * @param duration
      * @return
@@ -49,6 +50,7 @@ public class VWAPCalculatorImpl implements VWAPCalculator {
 
         // this will create objects  - GC consideration,
         // for low memory utilization we could work with primitives
+        // No NFRS are given so continuing with Streams for Elegance.
         var volumeAndPrice = inscopeTrade.stream()
                 .mapToLong(trade -> (trade.price() * trade.quantity()))
                 .sum();

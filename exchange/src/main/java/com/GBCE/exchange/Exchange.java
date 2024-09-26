@@ -13,6 +13,9 @@ import org.slf4j.LoggerFactory;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+/**
+ * Exchange acts as a facade.
+ */
 public class Exchange {
 
     private static final Logger logger = LoggerFactory.getLogger(Exchange.class);

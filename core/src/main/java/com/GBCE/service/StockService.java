@@ -3,12 +3,14 @@ package com.GBCE.service;
 
 import com.GBCE.domain.Stock;
 
-import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
+/**
+ * Stock Service.
+ */
 public class StockService implements InstrumentService<Stock> {
 
     private final ConcurrentMap<String, Stock> stockMap = new ConcurrentHashMap<>();

@@ -46,7 +46,7 @@ public class TradeServiceTest {
         Assertions.assertEquals(2, trades.size());
 
         var timestamp3 = LocalDateTime.now().toEpochSecond(ZoneOffset.UTC);
-        tradeService.recordTradeTransaction("POP", new Trade(timestamp3, 1000, Trade.BuySell.SELL, 6500));
+        tradeService.recordTradeTransaction("POP", Trade.onlyForTestingTradeFactory(timestamp3, 1000, Trade.BuySell.SELL, 6500));
 
         var trades2 = tradeService.getTradeList("POP");
         Assertions.assertEquals(1, trades2.size());

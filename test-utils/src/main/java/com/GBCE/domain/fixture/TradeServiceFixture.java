@@ -3,7 +3,6 @@ package com.GBCE.domain.fixture;
 import com.GBCE.domain.Stock;
 import com.GBCE.domain.Trade;
 import com.GBCE.service.InstrumentService;
-import com.GBCE.service.StockService;
 import com.GBCE.service.TradeService;
 import com.GBCE.service.TradeServiceImpl;
 

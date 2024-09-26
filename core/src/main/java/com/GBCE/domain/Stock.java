@@ -1,7 +1,7 @@
 package com.GBCE.domain;
 
 /**
- *
+ * Representation of a Stock
  */
 public class Stock implements Instrument {
 

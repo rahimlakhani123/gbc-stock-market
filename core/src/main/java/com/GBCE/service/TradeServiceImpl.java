@@ -12,6 +12,10 @@ import java.util.concurrent.ConcurrentMap;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 import java.util.function.BiFunction;
 
+/**
+ * Trade Service
+ * Uses Instrument Service to validate if Symbol actually is for a Stock
+ */
 public class TradeServiceImpl implements TradeService {
 
     private static final Logger log = LoggerFactory.getLogger(TradeServiceImpl.class);
